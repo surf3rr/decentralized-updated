@@ -19,7 +19,7 @@ A trustless freelance marketplace built on the Stacks blockchain, enabling secur
 
 ## 🚀 Live Demo
 
-🌟 **[View Live Demo](https://your-username.github.io/decentralized-freelance/)**
+🌟 **[View Live Demo](https://surf3rr.github.io/decentralized-freelance/)**
 
 ## 🏗️ Architecture
 
@@ -55,7 +55,7 @@ A trustless freelance marketplace built on the Stacks blockchain, enabling secur
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/decentralized-freelance.git
+   git clone https://github.com/surf3rr/decentralized-freelance.git
    cd decentralized-freelance
    ```
 
@@ -150,7 +150,7 @@ This project is configured for automatic deployment to GitHub Pages using GitHub
 2. **GitHub Actions will automatically**:
    - Build the project
    - Deploy to GitHub Pages
-   - Make it available at `https://your-username.github.io/decentralized-freelance/`
+   - Make it available at `https://surf3rr.github.io/decentralized-freelance/`
 
 ### Manual Deployment
 

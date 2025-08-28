@@ -6,7 +6,7 @@ Thank you for your interest in contributing to the Decentralized Freelance Platf
 
 ### Reporting Bugs
 
-1. Check if the bug has already been reported in [Issues](https://github.com/your-username/decentralized-freelance/issues)
+1. Check if the bug has already been reported in [Issues](https://github.com/surf3rr/decentralized-freelance/issues)
 2. If not, create a new issue with:
    - Clear title and description
    - Steps to reproduce
@@ -16,7 +16,7 @@ Thank you for your interest in contributing to the Decentralized Freelance Platf
 
 ### Suggesting Features
 
-1. Check existing [Issues](https://github.com/your-username/decentralized-freelance/issues) for similar suggestions
+1. Check existing [Issues](https://github.com/surf3rr/decentralized-freelance/issues) for similar suggestions
 2. Create a new issue with:
    - Clear feature description
    - Use cases and benefits
@@ -120,7 +120,7 @@ npm test -- --coverage  # Generate coverage report
 
 1. **Clone your fork**
    ```bash
-   git clone https://github.com/your-username/decentralized-freelance.git
+   git clone https://github.com/surf3rr/decentralized-freelance.git
    cd decentralized-freelance
    ```
 
