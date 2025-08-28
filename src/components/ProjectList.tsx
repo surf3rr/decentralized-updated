@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Filter, RefreshCw, Grid, List } from 'lucide-react';
+import { Search, Filter, RefreshCw } from 'lucide-react';
 import { ProjectCard } from './ProjectCard';
 import { Project } from '../lib/types';
 

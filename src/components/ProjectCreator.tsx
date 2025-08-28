@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Calendar, DollarSign, User, FileText, ChevronDown } from 'lucide-react';
-import { createProject, stxToMicroStx } from '../lib/stacks';
+import { stxToMicroStx } from '../lib/stacks';
 import { ProjectFormData } from '../lib/types';
 
 interface ProjectCreatorProps {

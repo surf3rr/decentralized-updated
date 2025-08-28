@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Calendar, DollarSign, User, Clock, CheckCircle, AlertCircle, XCircle, Shield, Zap } from 'lucide-react';
 import { Project } from '../lib/types';
-import { formatSTX, acceptProject, submitWork, approveWork, disputeProject } from '../lib/stacks';
+import { formatSTX } from '../lib/stacks';
 
 interface ProjectCardProps {
   project: Project;

@@ -6,7 +6,7 @@ import { ProjectCreator } from './components/ProjectCreator';
 import { ProjectList } from './components/ProjectList';
 import { DashboardStats } from './components/DashboardStats';
 import { FreelancersList } from './components/FreelancersList';
-import { TrendingUp, Users, DollarSign, Briefcase } from 'lucide-react';
+import { TrendingUp, Users, DollarSign } from 'lucide-react';
 
 const App: React.FC = () => {
   const [userSession, setUserSession] = useState<UserSession | null>(null);

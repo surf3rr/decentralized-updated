@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, TrendingDown, DollarSign, Users, Briefcase } from 'lucide-react';
+import { TrendingUp, TrendingDown, DollarSign, Briefcase } from 'lucide-react';
 
 interface DashboardStatsProps {
   userAddress: string;
@@ -14,7 +14,7 @@ interface StatCard {
   icon: React.ElementType;
 }
 
-export const DashboardStats: React.FC<DashboardStatsProps> = ({ userAddress }) => {
+export const DashboardStats: React.FC<DashboardStatsProps> = ({ userAddress: _userAddress }) => {
   const stats: StatCard[] = [
     {
       title: "TOTAL PORTFOLIO",

@@ -1,15 +1,12 @@
 import {
-  makeContractCall,
-  broadcastTransaction,
   AnchorMode,
   standardPrincipalCV,
   uintCV,
   stringUtf8CV,
-  contractPrincipalCV,
 } from '@stacks/transactions';
 import { StacksTestnet } from '@stacks/network';
 import { openContractCall } from '@stacks/connect';
-import { Project, ProjectStatus } from './types';
+import { ProjectStatus } from './types';
 
 // Network configuration
 const NETWORK = new StacksTestnet();
@@ -24,7 +21,7 @@ export const createProject = async (
   budget: number,
   deadline: number,
   freelancerAddress: string,
-  userSession: any
+  _userSession: any
 ) => {
   const functionArgs = [
     stringUtf8CV(title),
@@ -52,7 +49,7 @@ export const createProject = async (
   await openContractCall(options);
 };
 
-export const acceptProject = async (projectId: number, userSession: any) => {
+export const acceptProject = async (projectId: number, _userSession: any) => {
   const functionArgs = [uintCV(projectId)];
 
   const options = {
@@ -73,7 +70,7 @@ export const acceptProject = async (projectId: number, userSession: any) => {
   await openContractCall(options);
 };
 
-export const submitWork = async (projectId: number, userSession: any) => {
+export const submitWork = async (projectId: number, _userSession: any) => {
   const functionArgs = [uintCV(projectId)];
 
   const options = {
@@ -94,7 +91,7 @@ export const submitWork = async (projectId: number, userSession: any) => {
   await openContractCall(options);
 };
 
-export const approveWork = async (projectId: number, userSession: any) => {
+export const approveWork = async (projectId: number, _userSession: any) => {
   const functionArgs = [uintCV(projectId)];
 
   const options = {
@@ -115,7 +112,7 @@ export const approveWork = async (projectId: number, userSession: any) => {
   await openContractCall(options);
 };
 
-export const disputeProject = async (projectId: number, userSession: any) => {
+export const disputeProject = async (projectId: number, _userSession: any) => {
   const functionArgs = [uintCV(projectId)];
 
   const options = {
