@@ -13,9 +13,11 @@
     "@stacks/connect": "^7.8.1",
     "@stacks/network": "^6.15.1",
     "@stacks/transactions": "^6.15.1",
+    "@tailwindcss/forms": "^0.5.10",
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.263.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "lucide-react": "^0.263.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
