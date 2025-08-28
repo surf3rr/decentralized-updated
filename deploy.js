@@ -9,27 +9,36 @@
  * Networks: devnet, testnet, mainnet
  */
 
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+import { execSync } from 'child_process';
+import fs from 'fs';
+import path from 'path';
 
 // Configuration
 const NETWORKS = {
   devnet: {
     name: 'Devnet (Local)',
-    command: 'clarinet deploy --devnet',
+    commands: [
+      'clarinet deployments generate --devnet',
+      'clarinet deployments apply --devnet'
+    ],
     configFile: 'settings/Devnet.toml',
     warning: '🟡 Deploying to local devnet'
   },
   testnet: {
     name: 'Testnet',
-    command: 'clarinet deploy --testnet',
+    commands: [
+      'clarinet deployments generate --testnet',
+      'clarinet deployments apply --testnet'
+    ],
     configFile: 'settings/Testnet.toml',
     warning: '🟠 Deploying to Stacks TESTNET - This uses testnet STX'
   },
   mainnet: {
-    name: 'Mainnet',
-    command: 'clarinet deploy --mainnet',
+    name: 'Mainnet', 
+    commands: [
+      'clarinet deployments generate --mainnet',
+      'clarinet deployments apply --mainnet'
+    ],
     configFile: 'settings/Mainnet.toml',
     warning: '🔴 DEPLOYING TO STACKS MAINNET - THIS USES REAL STX!'
   }
@@ -129,12 +138,28 @@ Installation instructions:
     
     // Deploy the contract
     console.log(`\n📄 Deploying freelance-escrow contract...`);
-    console.log(`Command: ${NETWORKS[network].command}\n`);
     
-    const result = execSync(NETWORKS[network].command, { 
-      stdio: 'inherit',
-      cwd: process.cwd()
-    });
+    // Execute deployment commands
+    for (let i = 0; i < NETWORKS[network].commands.length; i++) {
+      const command = NETWORKS[network].commands[i];
+      console.log(`\n🔧 Step ${i + 1}: ${command}`);
+      
+      try {
+        execSync(command, { 
+          stdio: 'inherit',
+          cwd: process.cwd()
+        });
+      } catch (error) {
+        console.error(`❌ Step ${i + 1} failed:`, error.message);
+        
+        // For devnet, suggest starting the devnet first
+        if (network === 'devnet' && error.message.includes('connection refused')) {
+          console.log(`\n💡 Try starting the devnet first:\n   clarinet devnet start\n`);
+        }
+        
+        throw error;
+      }
+    }
     
     console.log(`\n✅ Successfully deployed to ${NETWORKS[network].name}!`);
     
