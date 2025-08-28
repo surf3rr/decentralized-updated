@@ -11,7 +11,7 @@ deployment_fee_rate = 10
 
 [accounts.deployer]
 # REPLACE THIS with your actual 24-word testnet mnemonic phrase
-mnemonic = "<YOUR PRIVATE TESTNET MNEMONIC HERE>"
+mnemonic = "lyrics rigid kick faith happy evoke recipe easily vehicle hurt uncle unfair effort security adapt long between morning topple marble tent trigger pulse rural"
 
 # Optional: You can also use a private key directly instead of mnemonic
 # Uncomment the line below and add your 64-character hex private key (without 0x)
