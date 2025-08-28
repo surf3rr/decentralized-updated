@@ -1,0 +1,32 @@
+[network]
+name = "mainnet"
+stacks_node_rpc_address = "https://api.hiro.so"
+deployment_fee_rate = 10
+
+# ============================================
+# ⚠️  CRITICAL: ADD YOUR MAINNET PRIVATE KEY HERE ⚠️
+# ============================================
+# MAINNET DEPLOYMENT USES REAL STX - BE EXTREMELY CAREFUL!
+# Make sure you have sufficient STX for deployment fees
+# Current deployment fee rate: 10 microSTX per byte
+
+[accounts.deployer]
+# REPLACE THIS with your actual 24-word MAINNET mnemonic phrase
+# ⚠️ WARNING: This will spend real STX for deployment!
+mnemonic = "<YOUR PRIVATE MAINNET MNEMONIC HERE>"
+
+# Optional: You can also use a private key directly instead of mnemonic
+# Uncomment the line below and add your 64-character hex private key (without 0x)
+# secret_key = "your_64_character_mainnet_private_key_here"
+
+# Your mainnet STX address will be derived from the mnemonic/private key above
+# Example format: SP1ABC...XYZ (mainnet addresses start with SP)
+# stx_address = "SP1YOURACTUALADDRESSHERE"
+
+# MAINNET SECURITY WARNINGS:
+# 1. NEVER commit mainnet private keys to version control
+# 2. Use hardware wallets for mainnet deployments when possible
+# 3. Test everything on testnet first
+# 4. Keep your private keys extremely secure
+# 5. Consider using environment variables instead of this file
+# 6. Make sure you have enough STX for deployment (typically 0.1-1 STX)

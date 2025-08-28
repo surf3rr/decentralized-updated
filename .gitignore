@@ -116,7 +116,25 @@ tmp/
 
 # Stacks/Blockchain specific
 .stacks/
-contracts/
+# Keep contracts but ignore deployment artifacts
+clarinet-deployments/
+
+# CRITICAL: Private Keys and Sensitive Data
+# Never commit these files with real private keys
+*.pem
+*.key
+*.p12
+*.keystore
+wallets/
+secrets/
+
+# WARNING: Uncomment these lines if you add real private keys to TOML files
+# settings/Testnet.toml
+# settings/Mainnet.toml
+
+# Deployment artifacts
+deployments/
+*.deployment.json
 
 # Testing
 jest_coverage/

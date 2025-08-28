@@ -1,0 +1,27 @@
+[network]
+name = "testnet"
+stacks_node_rpc_address = "https://api.testnet.hiro.so"
+deployment_fee_rate = 10
+
+# ============================================
+# IMPORTANT: ADD YOUR TESTNET PRIVATE KEY HERE
+# ============================================
+# Replace the placeholder mnemonic below with your actual testnet credentials
+# You can get testnet STX from: https://explorer.stacks.co/sandbox/faucet
+
+[accounts.deployer]
+# REPLACE THIS with your actual 24-word testnet mnemonic phrase
+mnemonic = "<YOUR PRIVATE TESTNET MNEMONIC HERE>"
+
+# Optional: You can also use a private key directly instead of mnemonic
+# Uncomment the line below and add your 64-character hex private key (without 0x)
+# secret_key = "your_64_character_private_key_here"
+
+# Your testnet STX address will be derived from the mnemonic/private key above
+# Example format: ST1ABC...XYZ
+# stx_address = "ST1YOURACTUALADDRESSHERE"
+
+# SECURITY NOTES:
+# 1. Never commit your real private keys to version control
+# 2. Use environment variables for production deployments
+# 3. Keep your private keys secure and never share them

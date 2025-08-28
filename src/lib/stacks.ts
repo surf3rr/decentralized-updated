@@ -4,16 +4,47 @@ import {
   uintCV,
   stringUtf8CV,
 } from '@stacks/transactions';
-import { StacksTestnet } from '@stacks/network';
+import { StacksTestnet, StacksMainnet, StacksDevnet } from '@stacks/network';
 import { openContractCall } from '@stacks/connect';
 import { ProjectStatus } from './types';
 
-// Network configuration
-const NETWORK = new StacksTestnet();
+// Network configuration based on environment
+type NetworkType = 'devnet' | 'testnet' | 'mainnet';
+
+const getNetwork = (networkType: NetworkType = 'devnet') => {
+  switch (networkType) {
+    case 'mainnet':
+      return new StacksMainnet();
+    case 'testnet':
+      return new StacksTestnet();
+    case 'devnet':
+    default:
+      return new StacksDevnet();
+  }
+};
+
+// Get current network from environment or default to devnet
+const CURRENT_NETWORK: NetworkType = (process.env.REACT_APP_NETWORK as NetworkType) || 'devnet';
+const NETWORK = getNetwork(CURRENT_NETWORK);
 
 // Contract configuration - UPDATE THESE AFTER DEPLOYMENT
-const CONTRACT_ADDRESS = 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM'; // Update with your deployed contract address
-const CONTRACT_NAME = 'freelance-escrow';
+const CONTRACT_CONFIGS = {
+  devnet: {
+    address: 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM', // Devnet deployer address
+    name: 'freelance-escrow'
+  },
+  testnet: {
+    address: process.env.REACT_APP_TESTNET_CONTRACT_ADDRESS || 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM', // Update after testnet deployment
+    name: 'freelance-escrow'
+  },
+  mainnet: {
+    address: process.env.REACT_APP_MAINNET_CONTRACT_ADDRESS || 'SP1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM', // Update after mainnet deployment
+    name: 'freelance-escrow'
+  }
+};
+
+const CONTRACT_ADDRESS = CONTRACT_CONFIGS[CURRENT_NETWORK].address;
+const CONTRACT_NAME = CONTRACT_CONFIGS[CURRENT_NETWORK].name;
 
 export const createProject = async (
   title: string,
